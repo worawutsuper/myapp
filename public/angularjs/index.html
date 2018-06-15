@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <title>Angular js Basic</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <!-- <div ng-app=""ng-init="people={fname:'kong',lname:'ruksiam'}"> -->
+    <!-- <div ng-app=""ng-init="product=['มะม่วง','ขนุน','มะนาว']"> -->
+    <!-- <div ng-app=""ng-init="fname='wut'; lname='ruk';color='red';text='white' "> -->
+        <!-- Name : <input type="text" placeholder="input your firstname" ng-model="fname">
+        LName : <input type="text" placeholder="input your lastname" ng-model="lname">
+        <br>   -->
+        <!-- <h1>Name :{{people.fname  + '  '  + people.lname}}</h1> -->
+        <!-- <h1>Product :{{product[1]}}</h1> -->
+        <!-- <h1 style="background-color:{{color}};color:{{text}}">Hello :{{fname+' '+lname}}</h1> -->
+
+        <!-- <h1>{{100*50}}</h1> -->
+    <!-- </div> -->
+    <!-- <div ng-app="" ng-init="price=50;count=1" >
+        สินค้า : <input type="text" ng-model="price" disabled /><br>
+        จำนวนที่ซื้อ : <input type="number" ng-model="count"/>
+        <h1>{{price*count}}</h1>
+    </div>
+    <div ng-app="myApp" ng-controller="myCtrl" colortext>
+        <h6>{{fname+lname}}haha</h6>
+    </div> -->
+    <h1 style='font-family:tahoma;color:red' >วุฒิ หล่อจัง <small>angular</small></h1>
+    <hr> Link ยอดนิยม
+    <div ng-app="" ng-init="mail=['hotmail','gmail'];price=50;count=1" >
+        <ul>
+            <h5 ng-repeat="x in mail">{{x  +"ไทย"}} <a href="http://{{x}}.com" >คลิกลิงค์{{x}}</a> <h5>
+        </ul> <hr>
+        <form>
+            <input type="radio" ng-model="myanimal" checked value="dog" >Dog
+            <input type="radio" ng-model="myanimal" value="cat">Cat <br>
+            <input type="radio" ng-model="myanimal" value="fish">Fish
+            <input type="radio" ng-model="myanimal" value="ant">ปิดแสดง <br>
+        </form>
+        <div ng-switch="myanimal">
+            <div ng-switch-when="dog">
+                <p>Dog Content</p><img src='../favicon.ico' width=300 height=100>
+            </div>
+            <div ng-switch-when="cat">
+                <p>Cat Content </p>  <img src="../favicon.ico" width=600 height=200>
+            </div>
+            <div ng-switch-when="fish">
+                <p>Fish Content </p>  <img src="../favicon.ico" width=900 height=300>
+            </div>
+        </div><hr>
+        สินค้าคอนโดห้องละ : <input type="text" ng-model="price" disabled />ล้านบาท<br>
+        จำนวนที่ซื้อ : <input type="number" ng-model="count"/>
+        <h1>{{price*count*1000000   +  'บาท'}}</h1>
+    </div> <hr>
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl" colortext>
+        <h6>{{fname+lname}}haha</h6>
+    </div> -->
+hiคนหล่ออยากเล่นVUEไหม  <a href="../vue/index.html">คลิ๊กดิ</a>
+    <script src="app.js"></script>
+</body>
+</html>

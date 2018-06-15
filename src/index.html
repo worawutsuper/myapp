@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <title>Angular js Basic</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body> 
+    <!-- <div ng-app=""ng-init="people={fname:'kong',lname:'ruksiam'}"> -->
+    <!-- <div ng-app=""ng-init="product=['มะม่วง','ขนุน','มะนาว']"> -->
+    <!-- <div ng-app=""ng-init="fname='kong'; lname='ruksiam';color='red';text='white' "> -->
+        <!-- Name : <input type="text" placeholder="input your firstname" ng-model="fname">
+        LName : <input type="text" placeholder="input your lastname" ng-model="lname">
+        <br>   -->
+        <!-- <h1>Name :{{people.fname  + '  '  + people.lname}}</h1> -->
+        <!-- <h1>Product :{{product[1]}}</h1> -->
+        <!-- <h1 style="background-color:{{color}};color:{{text}}">Hello :{{fname+' '+lname}}</h1> -->
+        
+        <!-- <h1>{{100*50}}</h1> -->
+    <!-- </div> --> 
+    <!-- <div ng-app="" ng-init="price=50;count=1" >
+        สินค้า : <input type="text" ng-model="price" disabled /><br>
+        จำนวนที่ซื้อ : <input type="number" ng-model="count"/>
+        <h1>{{price*count}}</h1>
+    </div>
+    <div ng-app="myApp" ng-controller="myCtrl" colortext>
+        <h6>{{fname+lname}}haha</h6>  
+    </div> -->
+    <div ng-app="" ng-init="fruit=['มะม่วง','ขนุน','กล้วย','ลำใย']">
+        <ul>
+            <li ng-repeat="x in fruit">{{x}}</li>            
+        </ul>
+        <form>           
+            <input type="radio" ng-model="myanimal" checked value="dog" >Dog <br>
+            <input type="radio" ng-model="myanimal" value="cat">Cat <br>
+            <input type="radio" ng-model="myanimal" value="fish">Fish <br>
+            <input type="radio" ng-model="myanimal" value="ant">Ant <br>             
+        </form>
+        <div ng-switch="myanimal">
+            <div ng-switch-when="dog">
+                <p>Dog Content</p>
+            </div>
+            <div ng-switch-when="cat">
+                <p>Cat Content</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="app.js"></script>
+</body>
+</html>
