@@ -3,13 +3,51 @@
 <head>
     <meta charset="utf-8" />
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <title>Page Title</title>
+    <title>vuefire</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
-    <script src="main.js"></script>
+    
 </head>
 <body>
-    Hi vuE
+        <div class="container col-md-6" id="comment" >
+            <h2>vue.js+firebase</h2>
+            <!-- display comment -->
+            <div class="card"></div>
+            <div class="card-body">
+                <h5 class="card-tittle">{{messageText}}</h5>
+                <p class="card-text text-muted">{{name}}</p>
+            </div>
+            <hr>
+            <!-- form design -->
+            <form class="form-group" @submit.prevent="storeMessage" >
+                <div>
+                    <textarea name="name" class="form-control" v-model="messageText" ></textarea>
+                </div>
+                <label for="">ชื่อ</label> <br>
+                <input type="text" class="form-control" v-model="name" ><br>
+                <button type="submit" class="btn btn-primary">comment</button>
+            </form>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD-T6rEAzrq0s-RipW6Z-fxbNstk8_8eq8",
+        authDomain: "vuejstutorial-1ab25.firebaseapp.com",
+        databaseURL: "https://vuejstutorial-1ab25.firebaseio.com",
+        projectId: "vuejstutorial-1ab25",
+        storageBucket: "",
+        messagingSenderId: "964759369213"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="App.js" charset="utf-8"></script>
 </body>
 </html>
 
