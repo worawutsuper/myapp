@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title>vuefire</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    
+    
+</head>
+<body>
+        <div class="container col-md-6" id="comment" >
+            <h2>Vue.js + Firebase</h2>
+            <!-- display comment -->
+            <div class="card" v-for="m in messages">
+                <div class="card-body">
+                    <h5 class="card-tittle" v-if="m!=editText" >ข้อความ  {{m.text}}</h5>
+                    <textarea v-else name="name" class="form-control" v-model="messageText" ></textarea>
+                    <p class="card-text text-muted">  ชื่อ  {{m.name}}</p>
+                    <!-- <p class="card-text text-muted">  ชื่อ  {{m.id}}</p> -->
+                    <div v-if="m!=editText">
+                        <a href="้#" class="card-link" @click.prevent="deleteMessage(m)" >ลบ</a>
+                        <a href="้#" class="card-link" @click.prevent="editMessage(m)" >แก้ไข</a>
+                        <!-- <h6><a v-bind:href="web"  class="card-link"  >ลิงค์</a></h6>  -->
+                    </div>
+                    <div v-else >
+                        <a href="้#" class="card-link" @click.prevent="cancelMessage(m)" >ยกเลิก</a>
+                        <a href="้#" class="card-link" @click.prevent="updateMessage(m)" >อัพเดท</a>
+                        <h6><a v-bind:href="web"  class="card-link"  >ลิงค์</a></h6> 
+                    </div>
+                </div>
+            </div>       
+            <hr>
+            <!-- form design -->
+            <form v-if="!editText"  class="form-group" @submit.prevent="storeMessage" >
+                <div>
+                    <textarea name="name" class="form-control" v-model="messageText" ></textarea>
+                </div>
+                <label for="">ชื่อ</label> <br>
+                <input type="text" class="form-control" v-model="name" ><br>
+                <button type="submit" class="btn btn-primary">comment</button>
+            </form>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyCBh_7cmpgJg_WE7I-ah8HNyTM93CneihM",
+            authDomain: "vuejstutorial-4f3fa.firebaseapp.com",
+            databaseURL: "https://vuejstutorial-4f3fa.firebaseio.com",
+            projectId: "vuejstutorial-4f3fa",
+            storageBucket: "vuejstutorial-4f3fa.appspot.com",
+            messagingSenderId: "970504638103"
+          };
+          firebase.initializeApp(config);
+        </script>
+    <script src="App.js" charset="utf-8"></script>
+</body>
+</html>
+
+
+
